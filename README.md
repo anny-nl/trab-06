@@ -6,20 +6,21 @@ Para validar o funcionamento do exchange e das filas, é possível publicar uma 
 
 ### Passos:
 
-Abrir o arquivo do docker-compose.yml
+Abrir o arquivo e rode no terminal o docker-compose.yml
 - Subir o container no terminal "docker-compose up -d"
 
 1. Acesse: http://localhost:15672
 2. Usuário: admin
    Senha: admin
 Vá em "Exchanges" → clique em "Add a new exchange"
-
+##Faça:
 Name: mensagens
 Type: topic
 Durability: Durable
 Clique em Add Exchange
 Vá em "Queues" → clique em "Add a new queue" duas vezes:
 
+##Faça:
 Queue 1:
 Name: fila_face
 Durability: Durable
@@ -28,10 +29,12 @@ Queue 2:
 Name: fila_team
 Durability: Durable
 
+##Faça:
 Vá em "Bindings" dentro do Exchange mensagens:
 Bind fila_face com routing key: face
 Bind fila_team com routing key: team
 
+##Faça:
 4. Vá em **Exchanges** → selecione `mensagens`
 5. Role até **Publish message**
 6. Preencha os campos:
