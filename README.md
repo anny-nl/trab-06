@@ -1,4 +1,33 @@
-# trab-06
+# Trabalho 6: Sistema Distribuído de Análise de Imagens (Java, Docker & RabbitMQ)
+## Este projeto implementa o broker RabbitMQ, e dois consumidores, cada um com sua lógica de análise visual:
+
+Sistema Distribuído de Carga com IA embutida usando Java, Docker e RabbitMQ , atendendo aos requisitos da Atividade 6.
+## Arquitetura do Sistema (4 Contêineres)
+O sistema foi projetado para gerar uma carga constante de mensagens (imagens de rostos e brasões de times) e processá-las em serviços separados.
+
+# Comandos de Execução e Gerenciamento
+Todo o projeto é containerizado  e deve ser gerenciado via Docker Compose.
+## Pré-requisitos:
+- Docker Engine e Docker Compose instalados.
+- Todos os comandos devem ser executados a partir do diretório raiz do projeto (onde está o docker-compose.yml).
+
+# 1. Inicializar e Construir o Sistema
+Este comando constrói as imagens Docker dos serviços Java, cria a rede e cria o volume de dados e inicia todos os 4 contêineres em segundo plano:
+
+docker compose up --build -d
+
+# 2. Verificar o Status dos Serviços
+docker compose ps
+
+# 3. Visualizar o Fluxo de Mensagens (Logs) 
+## Gerador (Produtor)
+docker compose logs -f gerador-mensagens
+
+
+
+
+
+
 
 ## Teste manual de envio de mensagens
 
